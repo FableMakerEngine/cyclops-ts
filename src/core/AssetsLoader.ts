@@ -1,6 +1,6 @@
 import {Loader, LoaderResource, utils} from "pixi.js";
 
-export default class ImageLoader {
+export default class AssetsLoader {
 
     public static rootPath = "assets/";
 
