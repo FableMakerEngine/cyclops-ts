@@ -1,16 +1,16 @@
-import { Sprite } from 'pixi.js';
-import AssetsLoader from '../core/AssetsLoader';
+import { LoaderResource, Sprite, utils } from 'pixi.js';
+import AssetLoader from '../core/AssetLoader';
 import Scene from './Scene';
 
 export default class SceneBoot extends Scene {
   logo: Sprite;
 
-  preload() {
+  override preload() {
     super.preload();
-    AssetsLoader.add('shroom.png', 'pictures/');
+    AssetLoader.add('shroom.png', 'pictures/');
   }
 
-  create(resources) {
+  override create(resources: utils.Dict<LoaderResource>) {
     super.create(resources);
     this.logo = new Sprite(resources.shroom.texture);
     this.logo.anchor.set(0.5);
@@ -19,7 +19,7 @@ export default class SceneBoot extends Scene {
     this.addChild(this.logo);
   }
 
-  update(dt) {
+  override update(dt) {
     this.logo.rotation += 0.01 * dt;
   }
 

@@ -31,6 +31,7 @@
       "linebreak-style": ["error", "windows"],
       "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
       "no-use-before-define": "off",
+      "no-restricted-syntax": "off",
       "@typescript-eslint/no-use-before-define": ["error", {
           "ignoreTypeReferences": true
         }]
