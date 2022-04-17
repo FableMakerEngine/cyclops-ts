@@ -34,7 +34,11 @@ export default class AssetLoader {
     this.add(filename, this.PATH.systems);
   }
 
-  public static add(filename: string, directory: string) {
+  public static addMap(filename: string) {
+    this.add(filename, `${this.PATH.data}/maps/`);
+  }
+
+  public static add(filename, directory) {
     const url = `${this.rootPath}${directory}/${filename}`;
     const key = filename.split('.')[0];
     this.loader.add(key, url);

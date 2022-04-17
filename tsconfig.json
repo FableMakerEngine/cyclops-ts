@@ -9,7 +9,8 @@
       "mini-signals": [
         "./node_modules/resource-loader/typings/mini-signals.d.ts"
       ]
-    }
+    },
+    "noImplicitOverride": true,
   },
   "include": [
     "src/**/*.ts"

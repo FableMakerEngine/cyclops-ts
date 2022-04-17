@@ -19,6 +19,7 @@
   "author": "inc0der, nio kasgami",
   "license": "MIT",
   "dependencies": {
+    "@pixi/tilemap": "^3.2.2",
     "pixi.js": "^6.3.0"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "http-server": "^14.1.0",
     "rollup": "^2.70.1",
