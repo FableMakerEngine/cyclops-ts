@@ -1,9 +1,13 @@
-import { LoaderResource, Sprite, utils } from 'pixi.js';
+import {
+  LoaderResource, Point, Rectangle, Sprite, utils,
+} from 'pixi.js';
 import AssetLoader from '../core/AssetLoader';
 import Scene from './Scene';
 import SceneMap from './SceneMap';
 import Keyboard from '../core/Input/Keyboard';
 import Key from '../core/Input/Key';
+import Entity from '../entities/Entity';
+import { DataEntity } from '../interfaces/database';
 
 export default class SceneBoot extends Scene {
   private logo: Sprite;
@@ -16,7 +20,7 @@ export default class SceneBoot extends Scene {
 
   public override preload() {
     super.preload();
-    AssetsLoader.add('shroom.png', 'pictures/');
+    AssetLoader.add('shroom.png', 'pictures/');
     this.keyboard.addKey(this.leftKey);
     this.keyboard.addKey(this.rightKey);
   }
@@ -29,14 +33,15 @@ export default class SceneBoot extends Scene {
     this.logo.x = this.game.width / 2;
     this.logo.y = this.game.height / 2;
     this.addChild(this.logo);
+     */
   }
 
   public override update(dt) {
     if (this.keyboard.isKeyDown(this.leftKey)) {
-      this.logo.rotation -= 0.02 * dt;
+      //   this.logo.rotation -= 0.02 * dt;
     }
     if (this.keyboard.isKeyDown(this.rightKey)) {
-      this.logo.rotation += 0.02 * dt;
+      //   this.logo.rotation += 0.02 * dt;
     }
   }
 
