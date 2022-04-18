@@ -6,6 +6,7 @@ import Window from './core/Window';
 import Scene from './scenes/Scene';
 import AssetLoader from './core/AssetLoader';
 import Keyboard from './core/Input/Keyboard';
+import SceneLoader from './core/SceneLoader';
 
 export default class Game extends utils.EventEmitter {
   private renderer: Renderer;
@@ -21,6 +22,8 @@ export default class Game extends utils.EventEmitter {
   public width: number;
 
   public height: number;
+
+  public sceneLoader: SceneLoader;
 
   public keyboard: Keyboard = new Keyboard();
 
@@ -55,6 +58,8 @@ export default class Game extends utils.EventEmitter {
   }
 
   private setupLoader(): void {
+    this.sceneLoader = new SceneLoader();
+    this.sceneLoader.on('sceneChange', this.onChangeScene.bind(this));
     AssetLoader.on('complete', this.onLoadComplete.bind(this));
     AssetLoader.on('progress', this.onLoadProgress.bind(this));
     AssetLoader.on('error', this.onLoadError.bind(this));
@@ -80,7 +85,7 @@ export default class Game extends utils.EventEmitter {
     return Game.instance;
   }
 
-  public changeScene(scene: Scene): void {
+  public onChangeScene(scene: Scene): void {
     this.scene = scene;
     this.scene.game = Game.instance;
     this.scene.preload();

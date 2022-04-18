@@ -3,5 +3,5 @@ import SceneBoot from './scenes/SceneBoot';
 
 window.onload = () => {
   const game = Game.getInstance();
-  game.changeScene(new SceneBoot());
+  game.sceneLoader.change(new SceneBoot());
 };
