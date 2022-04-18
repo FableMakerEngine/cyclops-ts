@@ -1,5 +1,5 @@
 import { utils } from 'pixi.js';
-import type Scene from './Scene';
+import type Scene from '../scenes/Scene';
 
 export default class SceneLoader extends utils.EventEmitter {
   private scenes: Map<string, Scene> = new Map();
@@ -18,7 +18,7 @@ export default class SceneLoader extends utils.EventEmitter {
   }
 
   public add(scene: Scene, name?: string) {
-    const key = name || scene.key;
+    const key = name || scene.name;
     if (this.scenes.has(key)) {
       throw new Error(`Scene with key ${key} already exists`);
     }
@@ -30,7 +30,7 @@ export default class SceneLoader extends utils.EventEmitter {
   public remove(scene: string | Scene) {
     const name = typeof scene === 'string' ? scene : scene.name;
     if (this.scenes.has(name)) {
-      this.scenes.delete(scene);
+      this.scenes.delete(name);
     }
   }
 
