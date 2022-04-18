@@ -94,7 +94,7 @@ export default class Game extends utils.EventEmitter {
   }
 
   public onSceneRemove(_scene: Scene): void {
-    this.scene.destroy();
+    this.scene.exit();
   }
 
   public onResize(width: number, height: number): void {
