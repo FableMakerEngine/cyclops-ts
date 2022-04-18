@@ -42,7 +42,10 @@ export default class SceneLoader extends utils.EventEmitter {
   }
 
   public change(scene: Scene) {
-    this.lastScene = this.currentScene;
+    if (this.currentScene) {
+      this.emit('sceneRemove', this.currentScene);
+      this.lastScene = this.currentScene;
+    }
     this.currentScene = scene;
     this.emit('sceneChange', scene);
   }

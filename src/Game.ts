@@ -60,6 +60,7 @@ export default class Game extends utils.EventEmitter {
   private setupLoader(): void {
     this.sceneLoader = new SceneLoader();
     this.sceneLoader.on('sceneChange', this.onChangeScene.bind(this));
+    this.sceneLoader.on('sceneRemove', this.onSceneRemove.bind(this));
     AssetLoader.on('complete', this.onLoadComplete.bind(this));
     AssetLoader.on('progress', this.onLoadProgress.bind(this));
     AssetLoader.on('error', this.onLoadError.bind(this));
@@ -90,6 +91,10 @@ export default class Game extends utils.EventEmitter {
     this.scene.game = Game.instance;
     this.scene.preload();
     AssetLoader.load();
+  }
+
+  public onSceneRemove(_scene: Scene): void {
+    this.scene.destroy();
   }
 
   public onResize(width: number, height: number): void {
