@@ -6,8 +6,6 @@ export default class Scene extends Container {
 
   public isReady: boolean = false;
 
-  public name: string;
-
   public setName(name: string) {
     this.name = name;
   }
