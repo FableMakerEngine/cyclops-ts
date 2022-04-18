@@ -1,14 +1,21 @@
-name: pull-request
+name: merge
 on:
-  pull_request:
-    branches: [ main ]
+  push:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-       - name: Build
+       - name: Setup Build
          uses: actions/setup-node@v1
+
+       - name: Install Dependencies
          run: npm install
+
+       - name: Build
+         run: npm build
+
        - name: Archive Build
          uses: actions/upload-artifact@v3
          with:
