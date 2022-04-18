@@ -6,6 +6,8 @@ export default class Scene extends Container {
 
   public isReady: boolean = false;
 
+  public name: string;
+
   public preload() {
     this.game.once('loaderComplete', this.create.bind(this));
   }
