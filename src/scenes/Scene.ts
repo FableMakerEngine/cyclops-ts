@@ -8,6 +8,10 @@ export default class Scene extends Container {
 
   public name: string;
 
+  public setName(name: string) {
+    this.name = name;
+  }
+
   public preload() {
     this.game.once('loaderComplete', this.create.bind(this));
   }
