@@ -30,6 +30,7 @@ export default class SceneLoader extends utils.EventEmitter {
   public remove(scene: string | Scene) {
     const name = typeof scene === 'string' ? scene : scene.name;
     if (this.scenes.has(name)) {
+      this.emit('remove', this.get(name));
       this.scenes.delete(name);
     }
   }
@@ -44,10 +45,9 @@ export default class SceneLoader extends utils.EventEmitter {
   public change(scene: Scene | string) {
     const newScene = typeof scene === 'string' ? this.get(scene) : scene;
     if (this.currentScene) {
-      this.emit('sceneRemove', this.currentScene);
       this.lastScene = this.currentScene;
     }
     this.currentScene = newScene;
-    this.emit('sceneChange', newScene);
+    this.emit('sceneChange', this.currentScene, this.lastScene);
   }
 }
