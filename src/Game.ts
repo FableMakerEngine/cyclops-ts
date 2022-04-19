@@ -59,8 +59,8 @@ export default class Game extends utils.EventEmitter {
 
   private setupLoader(): void {
     this.sceneLoader = new SceneLoader();
-    this.sceneLoader.on('sceneChange', this.onChangeScene.bind(this));
-    this.sceneLoader.on('sceneRemove', this.onSceneRemove.bind(this));
+    this.sceneLoader.on('change', this.onChangeScene.bind(this));
+    this.sceneLoader.on('remove', this.onSceneRemove.bind(this));
     AssetLoader.on('complete', this.onLoadComplete.bind(this));
     AssetLoader.on('progress', this.onLoadProgress.bind(this));
     AssetLoader.on('error', this.onLoadError.bind(this));
