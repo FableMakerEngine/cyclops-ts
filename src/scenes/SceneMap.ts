@@ -1,5 +1,5 @@
 import AssetLoader from '../core/AssetLoader';
-import Scene from './Scene';
+import Scene from '../core/Scene';
 import Tilemap from '../core/tilemap/Tilemap';
 import { ITilemapConfig } from '../core/tilemap/ITilemapConfig';
 import { fullParse } from '../utils/ldtkParser';
@@ -27,7 +27,7 @@ export default class SceneMap extends Scene {
     this.tilemap = new Tilemap(config);
     this.addChild(this.tilemap);
     setTimeout(() => {
-      this.game.sceneLoader.pop();
+      this.game.sceneLoader.change('boot');
     }, 2000);
   }
 }
