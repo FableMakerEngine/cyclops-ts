@@ -1,6 +1,6 @@
 import { Sprite, Rectangle, Point } from 'pixi.js';
 import AssetLoader from '../core/AssetLoader';
-import Scene from '../core/Scene';
+import Scene from '../core/scene/Scene';
 import Keyboard from '../core/Input/Keyboard';
 import Key from '../core/Input/Key';
 import Entity from '../entities/Entity';

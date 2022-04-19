@@ -1,5 +1,5 @@
 import AssetLoader from '../core/AssetLoader';
-import Scene from '../core/Scene';
+import Scene from '../core/scene/Scene';
 import Tilemap from '../core/tilemap/Tilemap';
 import { ITilemapConfig } from '../core/tilemap/ITilemapConfig';
 import { fullParse } from '../utils/ldtkParser';

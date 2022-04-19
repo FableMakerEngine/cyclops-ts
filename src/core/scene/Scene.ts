@@ -1,6 +1,6 @@
 import { Container, LoaderResource, utils } from 'pixi.js';
 import { IScene } from './IScene';
-import type Game from '../Game';
+import type Game from '../../Game';
 
 export default class Scene extends Container implements IScene {
   public game: Game;

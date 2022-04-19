@@ -1,5 +1,5 @@
 import type { utils, LoaderResource, Container } from 'pixi.js';
-import type Game from '../Game';
+import type Game from '../../Game';
 
 export interface IScene extends Container {
   game: Game;
