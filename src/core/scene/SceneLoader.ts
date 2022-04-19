@@ -41,6 +41,6 @@ export default class SceneLoader extends utils.EventEmitter {
       this.lastScene = this.currentScene;
     }
     this.currentScene = newScene;
-    this.emit('sceneChange', this.currentScene, this.lastScene);
+    this.emit('change', this.currentScene, this.lastScene);
   }
 }
