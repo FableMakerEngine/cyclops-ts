@@ -4,7 +4,7 @@ import Tilemap from '../core/tilemap/Tilemap';
 import { ITilemapConfig } from '../core/tilemap/ITilemapConfig';
 import { fullParse } from '../utils/ldtkParser';
 
-export default class extends Scene {
+export default class SceneMap extends Scene {
   private tilemap: Tilemap;
 
   public currentMapId: number;
@@ -26,5 +26,8 @@ export default class extends Scene {
     };
     this.tilemap = new Tilemap(config);
     this.addChild(this.tilemap);
+    setTimeout(() => {
+      this.game.sceneLoader.pop();
+    }, 2000);
   }
 }
