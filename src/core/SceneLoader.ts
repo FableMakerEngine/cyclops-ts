@@ -35,13 +35,6 @@ export default class SceneLoader extends utils.EventEmitter {
     }
   }
 
-  public pop() {
-    const tempLastScene = this.currentScene;
-    this.currentScene = this.lastScene;
-    this.lastScene = tempLastScene;
-    this.emit('sceneChange', this.currentScene);
-  }
-
   public change(scene: IScene | string) {
     const newScene = typeof scene === 'string' ? this.get(scene) : scene;
     if (this.currentScene) {
