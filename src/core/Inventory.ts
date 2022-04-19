@@ -9,7 +9,5 @@ export default class Inventory {
 
   public addItem(id: number) {
     this.inventory = {};
-
-    console.log('this is a test');
   }
 }

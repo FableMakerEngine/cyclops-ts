@@ -43,8 +43,6 @@ export default class Entity extends Container {
    */
   public setTexture(texture: Texture) {
     this.sprite.texture = texture;
-    this.width = this.sprite.width;
-    this.height = this.sprite.height;
   }
 
   /**
@@ -53,10 +51,8 @@ export default class Entity extends Container {
    * @protected
    */
   protected createSprite(data: SpriteShape) {
-    const { texture } = AssetLoader.get(data.filename);
+    const texture = data.filename;
     this.sprite = new Sprite(texture);
-    this.width = this.sprite.width;
-    this.height = this.sprite.height;
     this.addChild(this.sprite);
   }
 
