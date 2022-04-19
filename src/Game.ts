@@ -86,7 +86,10 @@ export default class Game extends utils.EventEmitter {
     return Game.instance;
   }
 
-  public onChangeScene(scene: IScene): void {
+  public onChangeScene(scene: IScene, lastScene: IScene): void {
+    if (lastScene) {
+      lastScene.exit();
+    }
     this.scene = scene;
     if (this.scene.isReady) {
       return;
