@@ -3,7 +3,7 @@ import {
 } from 'pixi.js';
 
 import Window from './core/Window';
-import Scene from './scenes/Scene';
+import { IScene } from './core/IScene';
 import AssetLoader from './core/AssetLoader';
 import Keyboard from './core/Input/Keyboard';
 import SceneLoader from './core/SceneLoader';
@@ -15,7 +15,7 @@ export default class Game extends utils.EventEmitter {
 
   private ticker: Ticker;
 
-  private scene: Scene;
+  private scene: IScene;
 
   private window: Window;
 
@@ -86,7 +86,7 @@ export default class Game extends utils.EventEmitter {
     return Game.instance;
   }
 
-  public onChangeScene(scene: Scene): void {
+  public onChangeScene(scene: IScene): void {
     this.scene = scene;
     if (this.scene.isReady) {
       return;
@@ -96,7 +96,7 @@ export default class Game extends utils.EventEmitter {
     AssetLoader.load();
   }
 
-  public onSceneRemove(_scene: Scene): void {
+  public onSceneRemove(_scene: IScene): void {
     this.scene.exit();
   }
 
