@@ -10,7 +10,7 @@ import Entity from '../entities/Entity';
 import { DataEntity } from '../interfaces/database';
 
 export default class SceneBoot extends Scene {
-  private logo: Sprite;
+  private logo: Entity;
 
   private keyboard = new Keyboard();
 
@@ -27,12 +27,31 @@ export default class SceneBoot extends Scene {
 
   public override create(resources) {
     super.create(resources);
-    this.game.changeScene(new SceneMap());
+
+    // this.game.changeScene(new SceneMap());
+    const entity = {
+      data: {
+        id: 'shroom',
+        sprite: {
+          filename: resources.shroom.texture,
+          index: 0,
+          fps: 0,
+        },
+        collision: new Rectangle(0, 0, 0, 0),
+      },
+      coords: new Point(
+        this.game.width / 2,
+        this.game.height / 2,
+      ),
+    };
+    this.logo = new Entity(entity.data, entity.coords);
+    this.addChild(this.logo);
+    /**
     this.logo = new Sprite(resources.shroom.texture);
     this.logo.anchor.set(0.5);
     this.logo.x = this.game.width / 2;
     this.logo.y = this.game.height / 2;
-    this.addChild(this.logo);
+
      */
   }
 

@@ -68,10 +68,12 @@ export default class Entity extends Container {
     }
   }
 
+  // @todo I gotta figure out how to implement this
   public onCollisionEnter(signal: unknown) {
 
   }
 
+  // @todo I gotta figure out how to implement this
   public onCollisionExit(signal: unknown) {
 
   }
