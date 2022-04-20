@@ -2,7 +2,6 @@ import {
   Container, Point, Rectangle, Sprite, Texture,
 } from 'pixi.js';
 import { DataEntity, SpriteShape } from '../interfaces/database';
-import AssetLoader from '../core/AssetLoader';
 
 /**
  * the super class that define how an entity is shaped
@@ -69,12 +68,14 @@ export default class Entity extends Container {
   }
 
   // @todo I gotta figure out how to implement this
-  public onCollisionEnter(signal: unknown) {
+  // eslint-disable-next-line class-methods-use-this
+  public onCollisionEnter(_signal: unknown) {
 
   }
 
   // @todo I gotta figure out how to implement this
-  public onCollisionExit(signal: unknown) {
+  // eslint-disable-next-line class-methods-use-this
+  public onCollisionExit(_signal: unknown) {
 
   }
 }

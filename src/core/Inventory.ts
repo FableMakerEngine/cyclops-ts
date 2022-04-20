@@ -7,7 +7,7 @@ export default class Inventory {
     this.inventory = {};
   }
 
-  public addItem(id: number) {
+  public addItem(_id: number) {
     this.inventory = {};
   }
 }
