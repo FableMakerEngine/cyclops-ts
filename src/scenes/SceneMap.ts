@@ -1,3 +1,4 @@
+import { utils, LoaderResource } from 'pixi.js';
 import AssetLoader from '../core/AssetLoader';
 import Scene from '../core/scene/Scene';
 import Tilemap from '../core/tilemap/Tilemap';
@@ -15,7 +16,7 @@ export default class SceneMap extends Scene {
     AssetLoader.addMap('map1.json');
   }
 
-  public override create(resources) {
+  public override create(resources: utils.Dict<LoaderResource>) {
     super.create(resources);
     const { layers, levels, tilesets } = fullParse('map1', resources);
     const level = levels[0];

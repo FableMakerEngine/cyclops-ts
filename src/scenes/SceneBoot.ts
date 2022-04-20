@@ -1,4 +1,4 @@
-import { Sprite, Rectangle, Point } from 'pixi.js';
+import { Sprite, Rectangle, Point, utils, LoaderResource } from 'pixi.js';
 import AssetLoader from '../core/AssetLoader';
 import Scene from '../core/scene/Scene';
 import Keyboard from '../core/Input/Keyboard';
@@ -24,7 +24,7 @@ export default class SceneBoot extends Scene {
     // to test if it work
   }
 
-  public override create(resources) {
+  public override create(resources: utils.Dict<LoaderResource>) {
     super.create(resources);
 
     // this.game.changeScene(new SceneMap());
