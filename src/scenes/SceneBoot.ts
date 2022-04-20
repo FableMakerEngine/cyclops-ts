@@ -1,16 +1,15 @@
-import {
-  LoaderResource, Point, Rectangle, Sprite, utils,
-} from 'pixi.js';
+import { Point, Rectangle, Sprite } from 'pixi.js';
 import AssetLoader from '../core/AssetLoader';
 import Scene from './Scene';
-import SceneMap from './SceneMap';
+// import SceneMap from './SceneMap';
 import Keyboard from '../core/Input/Keyboard';
 import Key from '../core/Input/Key';
 import Entity from '../entities/Entity';
-import { DataEntity } from '../interfaces/database';
 
 export default class SceneBoot extends Scene {
-  private logo: Entity;
+  private entity: Entity;
+
+  private logo: Sprite;
 
   private keyboard = new Keyboard();
 
@@ -45,23 +44,20 @@ export default class SceneBoot extends Scene {
         this.game.height / 2,
       ),
     };
-    this.logo = new Entity(entity.data, entity.coords);
-    this.addChild(this.logo);
-    /**
+    this.entity = new Entity(entity.data, entity.coords);
+    this.addChild(this.entity);
     this.logo = new Sprite(resources.shroom.texture);
     this.logo.anchor.set(0.5);
     this.logo.x = this.game.width / 2;
     this.logo.y = this.game.height / 2;
-
-     */
   }
 
-  public override update(dt) {
+  public override update(dt?: number) {
     if (this.keyboard.isKeyDown(this.leftKey)) {
-      //   this.logo.rotation -= 0.02 * dt;
+      this.logo.rotation -= 0.02 * dt;
     }
     if (this.keyboard.isKeyDown(this.rightKey)) {
-      //   this.logo.rotation += 0.02 * dt;
+      this.logo.rotation += 0.02 * dt;
     }
   }
 
