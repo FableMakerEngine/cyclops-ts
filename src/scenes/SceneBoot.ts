@@ -23,6 +23,7 @@ export default class SceneBoot extends Scene {
     AssetLoader.add('shroom.png', 'pictures/');
     this.keyboard.addKey(this.leftKey);
     this.keyboard.addKey(this.rightKey);
+    // to test if it work
   }
 
   public override create(resources) {
