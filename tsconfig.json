@@ -5,6 +5,7 @@
     "baseUrl": "./",
     "emitDeclarationOnly": true,
     "declaration": true,
+    "outFile": "./dist/cyclops.d.ts",
     "noImplicitOverride": true,
     "noImplicitAny": true,
     "paths": {
