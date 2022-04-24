@@ -1,5 +1,5 @@
 import * as ldtkParser from './utils/ldtkParser';
-import Entity from './entities/Entity';
+import Entity from './entity/Entity';
 import Game from './Game';
 
 export * from './core/';
