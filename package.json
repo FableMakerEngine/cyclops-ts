@@ -5,7 +5,7 @@
   "main": "./dist/cyclops.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production node ./build.js",
-    "dev": "rollup --config rollup.config.ts --configPlugin typescript --watch",
+    "dev": "node ./build.js",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,11 +27,11 @@
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "cross-env": "^7.0.3",
-    "esbuild": "^0.14.38",
     "eslint": "^8.13.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "estrella": "^1.4.1",
     "http-server": "^14.1.0",
     "tslib": "^2.3.1",
     "typescript": "^4.6.3"

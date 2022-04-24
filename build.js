@@ -1,4 +1,4 @@
-const esbuild = require('esbuild');
+const esbuild = require('estrella');
 
 const banner = `
 /**
@@ -16,14 +16,13 @@ const banner = `
 const isProduction = process.env.NODE_ENV === 'production'
 
 esbuild.build({
-  entryPoints: ['./src/index.ts'],
+  entry: './src/index.ts',
   outfile: 'dist/cyclops.js',
   bundle: true,
+  watch: !isProduction,
   // minify: isProduction,
   format: 'esm',
-  platform: 'node',
   sourcemap: true,
-  target: 'node14',
   external: ['pixi.js', '@pixi/tilemap'],
   banner: { js: banner },
 }).catch(() => process.exit(1))

@@ -1,11 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "baseUrl": "./",
-    "emitDeclarationOnly": true,
     "declaration": true,
-    "outFile": "./dist/cyclops.d.ts",
+    "declarationMap": true,
+    "target": "esNext",
     "noImplicitOverride": true,
     "noImplicitAny": true,
     "paths": {
