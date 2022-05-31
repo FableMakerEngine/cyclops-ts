@@ -7,7 +7,7 @@
   "bundle": "./bundles/cyclops.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && node ./build.js",
     "dev": "node ./build.js --watch",
     "bundle": "node ./build.js",
     "lint": "eslint src/**/*.ts",
