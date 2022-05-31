@@ -7,9 +7,9 @@
   "bundle": "./bundles/cyclops.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsc && node ./build.js",
+    "build": "tsc",
     "dev": "node ./build.js --watch",
-    "bundle": "node ./build.js",
+    "bundle": "tsc && node ./build.js",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
